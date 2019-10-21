@@ -1,0 +1,64 @@
+body {
+width: 900px;
+margin: 10px auto;
+background: white;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.padding{
+padding: 5px;
+}
+
+.logo,
+.navigation,
+.content,
+.footer {
+margin-bottom: 10px;
+padding: 15px 0;
+}
+
+.logo {
+width: 100%;
+height: auto;
+background:#6262eb;
+text-align: center;
+color: #fff;
+}
+
+.navigation {
+width: 100%;
+height: auto;
+text-align: black;
+background: white;
+text-align: right;
+}
+
+.content {
+width: 100%;
+height: auto;
+text-align: justify;
+}
+
+.footer {
+width: 100%;
+background: #6262eb;
+text-align: center;
+color: white;
+}
+
+.navigation ul{
+padding: 0;
+list-style: none;
+display: inline-block;
+margin: 0;
+}
+
+.navigation li{
+float: left;
+margin: 0 10px;
+}
+
+.man1{
+    float: left;
+    width: 60%;
+}
