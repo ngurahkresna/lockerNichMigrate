@@ -1,0 +1,44 @@
+body{
+  width: 1000px;
+  margin: 10px auto;
+}
+/* Navbar container */
+.navbar {
+    overflow: hidden;
+    background-color : white;
+    font-family: Arial;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: right;
+    font-size: 16px;
+    color : black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(0, 153, 255);
+  }
+  
+  .btnkiri{
+    background-color: blue
+  }
+
+  .kiri{
+   
+    float: left;
+    width: 50%;
+  }
+
+  .anu{
+    
+    float: right;
+    width: 50%;
+   
+  
