@@ -16,18 +16,18 @@ class RegisterController extends Controller
     */
     public function registerUser(Request $request)
     {
-        $validate = \Validator::make($request->all(), [
-            'email' => ['required|string|email|max:255|unique:users'],
-            'password' => ['required|string|min:8|confirmed'],
-            'namadepan' => ['required|string|max:255'],
-            'namabelakang' => ['required|string|max:255'],
-        ]);
-
-        if( $validate->fails()){
-            return redirect()
-                ->back()
-                ->withErrors($validate);
-        }
+//        $validate = \Validator::make($request->all(), [
+//            'email' => ['required|string|email|max:255|unique:users'],
+//            'password' => ['required|string|min:8|confirmed'],
+//            'namadepan' => ['required|string|max:255'],
+//            'namabelakang' => ['required|string|max:255'],
+//        ]);
+//
+//        if( $validate->fails()){
+//            return redirect()
+//                ->back()
+//                ->withErrors($validate);
+//        }
 
         $user_create = \App\User::create([
             'email' => $request->email,
@@ -36,6 +36,6 @@ class RegisterController extends Controller
             'namabelakang' => $request->namabelakang
         ]);
 
-        return redirect('/register')->with('success', 'Successfully registered');
+        return redirect('/login')->with('success', 'Successfully registered');
     }
 }
