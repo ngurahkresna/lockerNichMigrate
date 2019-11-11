@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -37,7 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+//        $this->middleware('guest');
     }
 
     /**
@@ -49,9 +49,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'namadepan' => ['required', 'string', 'max:255'],
+            'namabelakang' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -63,10 +64,44 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        dd($data);
         return User::create([
-            'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => bcrypt($data['password']),
+            'namadepan' => $data['namadepan'],
+            'namabelakang' => $data['namabelakang']
         ]);
+    }
+
+    public function registrationForm()
+    {
+        return view('auth.register');
+    }
+
+    /* POST
+    */
+    public function registerUser(Request $request)
+    {
+        $validate = \Validator::make($request->all(), [
+            'email' => ['required|string|email|max:255|unique:users'],
+            'password' => ['required|string|min:8|confirmed'],
+            'namadepan' => ['required|string|max:255'],
+            'namabelakang' => ['required|string|max:255'],
+        ]);
+
+        if( $validate->fails()){
+            return redirect()
+                ->back()
+                ->withErrors($validate);
+        }
+
+        $user_create = \App\User::create([
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'namadepan' => $request->namadepan,
+            'namabelakang' => $request->namabelakang
+        ]);
+
+        return redirect('/register')->with('success', 'Successfully registered');
     }
 }

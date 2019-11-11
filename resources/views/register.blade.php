@@ -14,7 +14,7 @@
         <div style="margin: 32px 12px 40px 12px">
             <h3>Welcome</h3>
         </div>
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ url('/register') }}">
             @csrf
             <input type="text" name="namadepan" placeholder="nama depan">
             <input type="text" name="namabelakang" placeholder="nama belakang">

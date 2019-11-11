@@ -10,6 +10,7 @@
 
     <title>Landing Page</title>
   </head>
+  <body>
   
                 <div class ="container">
             <nav class="navbar navbar-expand-lg navbar-light">
