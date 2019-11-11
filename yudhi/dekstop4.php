@@ -35,15 +35,15 @@
 
 <div class="navbar">
     
-    <a href="#">About Us</a>
-    <a href="#">Cari Lowongan</a>
+    <a href="desktop3.html">About Us</a>
+    <a href="landing.php">Cari Lowongan</a>
     <a href="#">Login</a>  
     
   </div>
 <body>
 
 <div class="image">
-                <img src="1.png" alt="1" class="center" width=4% ><b style="font-size: 20px;">LockerNich</b>
+    <img src="1.png" alt="1" class="center" width=4% ><b style="font-size: 20px;">LockerNich</b>
 </div>
 
 
