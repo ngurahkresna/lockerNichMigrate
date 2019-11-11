@@ -10,7 +10,7 @@
 
     <title>Landing Page</title>
   </head>
-
+  
                 <div class ="container">
             <nav class="navbar navbar-expand-lg navbar-light">
             <div class = "container">
@@ -33,7 +33,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Login</a>
                 </li>
-
+                
                 </ul>
             </div>
             </nav>
@@ -45,8 +45,8 @@
         <div class = "container">
         <div class="container px-lg-5">
         <div class="row mx-lg-n5">
-            <div class="col py-3 px-lg-5"> karena di LockerNich memiliki kelengkapan informasi untuk anda semua dalam mencari lowongan pekerjaan yang anda indamkan,
-                        LockerNich lah solusi yang anda butuhkan, dapat mencari lowongan pekerjaan dengan basic yang anda punya dan tentuny dengan gaji yang
+            <div class="col py-3 px-lg-5"> karena di LockerNich memiliki kelengkapan informasi untuk anda semua dalam mencari lowongan pekerjaan yang anda indamkan, 
+                        LockerNich lah solusi yang anda butuhkan, dapat mencari lowongan pekerjaan dengan basic yang anda punya dan tentuny dengan gaji yang 
                         anda butuhkan, tunggu apa lagi ? ayo sekarang daftarkan dirimu !!!  </div>
 
             <div class="col py-3 px-lg-5"><img src="3.png" width = "60%";></div>
@@ -80,9 +80,9 @@
                 <img src="d.png" width="180" height="180">
                 <h6>Informasi Lengkap</h6>
                 </a>
-
+            
             </div>
-
+            
         </div>
         </div>
         <br><br><br>
@@ -106,7 +106,7 @@
             <label for="gaji"></label>
             <input type="text" class="form-control" name="gaji" placeholder="Gaji Yang Diinginkan">
         </div>
-
+       
         <button type="submit" class="btn btn-primary" name="submit" value = "submit" style = "margin : 0px 0px 0px 940px">Search</button>
         </form>
 
@@ -116,7 +116,7 @@
 
     </div>
     </div>
-
+        
 
 
 

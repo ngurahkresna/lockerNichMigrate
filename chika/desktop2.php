@@ -63,6 +63,7 @@
 
 </head>
 <body>
+  <form method = "POST" action = "tambahuser.php ">
   <div class="navbar">
     
     <a href="#">About Us</a>
@@ -77,7 +78,9 @@
     <h1>Cari Lowongan</h1>
   </div>
   <div>
+    
     <center><input type="text" name="Search" placeholder="Search"></center>
+     <center><input type="submit" name = "submit" value = "submit"></td></center>
   </div>
   <br><br>
   <h1 style="width: 35%;"><b>Wujudkan Cita-Cita Anda bersama kamu dan nikmati kemudahan yang kami berikan</b></h1>
