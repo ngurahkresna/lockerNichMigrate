@@ -8,16 +8,30 @@ $uriSegments = explode("/", parse_url($request, PHP_URL_PATH));
 $numSegments = count($uriSegments);
 $segment = $uriSegments[$numSegments - 1];
 
+$auth = new authController();
+
 switch ($segment) {
 
     case '' :
         include_once('views/home.php');
         break;
+    case 'home' :
+        include_once('views/home.php');
+        break;
+    case 'logout' :
+        $auth->logout();
+        break;
     case 'login' :
-        include_once('views/login.php');
+        $auth->index();
+        break;
+    case 'loginProcess' :
+        $auth->login();
         break;
     case 'register' :
         include_once('views/register.php');
+        break;
+    case 'registerProcess' :
+        $auth->registerProcess();
         break;
     case 'editProfile' :
         include_once('views/editProfile.php');

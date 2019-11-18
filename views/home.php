@@ -32,8 +32,10 @@
                             id, luctus cursus lorem. Praesent ullamcorper vestibulum elit, vel congue nibh fringilla
                             ut.
                         </p>
-                        <button type="button" class="btn-primary highlightButton " style="border: none;">Get Started
-                        </button>
+                        <a href="vacancy">
+                            <button type="button" class="btn-primary highlightButton " style="border: none;">Get Started
+                            </button>
+                        </a>
                     </div>
                     <div class="col-6">
                         <img src="assets/img/highlight.png" alt="content" style="margin: 0px 0px 0px 24% ;"
@@ -51,7 +53,8 @@
             <div class="container">
                 <div class="row carouselSet">
                     <div class="col-6">
-                        <h2 style="font-family: Roboto;font-style: normal;font-weight: normal;font-size: 36px;line-height: 42px;">Dapatkan pekerjaan dengan mudah sesuai dengan keinginan kalian di
+                        <h2 style="font-family: Roboto;font-style: normal;font-weight: normal;font-size: 36px;line-height: 42px;">
+                            Dapatkan pekerjaan dengan mudah sesuai dengan keinginan kalian di
                             <strong>LOCKERNICH</strong></h2>
                         <br>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl eros, auctor a
@@ -59,8 +62,10 @@
                             id, luctus cursus lorem. Praesent ullamcorper vestibulum elit, vel congue nibh fringilla
                             ut.
                         </p>
-                        <button type="button" class="btn-primary highlightButton" style="border: none;">Get Started
-                        </button>
+                        <a href="vacancy">
+                            <button type="button" class="btn-primary highlightButton" style="border: none;">Get Started
+                            </button>
+                        </a>
 
                     </div>
                     <div class="col-6">
@@ -79,7 +84,8 @@
             <div class="container">
                 <div class="row carouselSet">
                     <div class="col-6">
-                        <h2 style="font-family: Roboto;font-style: normal;font-weight: normal;font-size: 36px;line-height: 42px;">Dapatkan pekerjaan dengan mudah sesuai dengan keinginan kalian di
+                        <h2 style="font-family: Roboto;font-style: normal;font-weight: normal;font-size: 36px;line-height: 42px;">
+                            Dapatkan pekerjaan dengan mudah sesuai dengan keinginan kalian di
                             <strong>LOCKERNICH</strong></h2>
                         <br>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl eros, auctor a
@@ -87,8 +93,10 @@
                             id, luctus cursus lorem. Praesent ullamcorper vestibulum elit, vel congue nibh fringilla
                             ut.
                         </p>
-                        <button type="button" class="btn-primary highlightButton" style="border: none;">Get Started
-                        </button>
+                        <a href="vacancy">
+                            <button type="button" class="btn-primary highlightButton" style="border: none;">Get Started
+                            </button>
+                        </a>
 
                     </div>
                     <div class="col-6">

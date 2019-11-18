@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,22 +14,23 @@
 </head>
 <body>
 
-<!--<nav class="navbar navbar-light bg-light">-->
-<!--    <a href="/LockerNichFix" class="navbar-brand">-->
-<!--        <img src="assets/img/Logo.png" width="30" height="30" class="ml-5 d-inline-block align-top" alt="logo">-->
-<!--        LockerNich </a>-->
-<!--    <form class="form-inline">-->
-<!--        <a href="login" class="nav-item nav-link active">Login</a>-->
-<!--        <a href="register" class="nav-item nav-link active mr-5">Register</a>-->
-<!--    </form>-->
-<!--</nav>-->
-
+<?php if (!isset($_SESSION['id']))  { ?>
+<nav class="navbar navbar-light bg-light">
+    <a href="/LockerNichMigrate" class="navbar-brand">
+        <img src="assets/img/Logo.png" width="30" height="30" class="ml-5 d-inline-block align-top" alt="logo">
+        LockerNich </a>
+    <form class="form-inline">
+        <a href="login" class="nav-item nav-link active">Login</a>
+        <a href="register" class="nav-item nav-link active mr-5">Register</a>
+    </form>
+</nav>
+<?php } else { ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/LockerNichMigrate/">
         <img src="assets/img/Logo.png" width="30" height="30" class="ml-5 d-inline-block align-top" alt="logo">
         LockerNich
     </a>
@@ -33,8 +38,8 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         </ul>
         <div class="form-inline">
-            <a href="" class="nav-item nav-link">Tambah Lowongan</a>
-            <a href="" class="nav-item nav-link">Cari Lowongan</a>
+            <a href="company" class="nav-item nav-link">Tambah Lowongan</a>
+            <a href="vacancy" class="nav-item nav-link">Cari Lowongan</a>
             <div class="collapse navbar-collapse mr-5" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
@@ -43,7 +48,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="editProfile">Edit Profile</a>
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <a class="dropdown-item" href="logout">Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -51,6 +56,6 @@
         </div>
     </div>
 </nav>
-
+<?php } ?>
 </body>
 </html>

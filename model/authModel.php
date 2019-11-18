@@ -11,7 +11,7 @@ class authModel
 
     function login($params)
     {
-        $query = "SELECT * FROM user_table WHERE email = " . $params['email'] . " AND password = '" . hash('md5', $params['password']) . "'";
+        $query = "SELECT * FROM user_table WHERE email = '" . $params['email'] . "' AND password = '" . hash('md5', $params['password']) . "'";
         $ret = mysqli_query($this->connect, $query);
 
         $data = mysqli_fetch_assoc($ret);
@@ -33,7 +33,7 @@ class authModel
 
     function register($params)
     {
-        $query = "INSERT INTO user_table (firtsName, lastName, email, password) VALUES (" . $params['fName'] . ", '" . $params['lName'] . "', '" . $params['email'] . "', '" . hash('md5', $params['password']) . "')";
+        $query = "INSERT INTO user_table (firstName, lastName, email, password) VALUES ('" . $params['fName'] . "', '" . $params['lName'] . "', '" . $params['email'] . "', '" . hash('md5', $params['password']) . "')";
 
         $ret = mysqli_query($this->connect, $query);
 
