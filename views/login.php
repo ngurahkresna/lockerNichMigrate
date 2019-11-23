@@ -42,7 +42,9 @@
                         <button type="submit" class="btn btn-primary mt-3">Login</button>
                     </form>
                     <a href="register">
-                        <button type="submit" class="btn btn-light mt-2" style="background-color: #FFFFFF; border: none;">Buat akun baru</button>
+                        <button type="submit" class="btn btn-light mt-2"
+                                style="background-color: #FFFFFF; border: none;">Buat akun baru
+                        </button>
                     </a>
                 </div>
             </div>

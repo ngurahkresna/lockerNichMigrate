@@ -34,10 +34,13 @@ switch ($segment) {
         $auth->registerProcess();
         break;
     case 'editProfile' :
-        include_once('views/editProfile.php');
+        $auth->show();
         break;
-    case 'deleteaccount' :
-        echo 'deleteacc';
+    case 'editProfileProcess' :
+        $auth->update();
+        break;
+    case 'deleteAccount' :
+        $auth->destroy();
         break;
     case 'createVacancy' :
         include_once('views/createVacancy.php');
@@ -60,7 +63,7 @@ switch ($segment) {
     case 'editPost' :
         include_once('views/editPost.php');
         break;
-    case 'deletepost' :
+    case 'deletePost' :
         echo 'delete postingan';
         break;
     case 'post' :
