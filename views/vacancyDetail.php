@@ -1,3 +1,9 @@
+<?php
+
+$vacancy = $_SESSION['vacancyDetail'];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,31 +22,45 @@
             <div class="media position-relative">
                 <img src="assets/img/companyLogo.png" class="mr-5" alt="..." width="150px">
                 <div class="media-body ml-5 mt-3 align-center">
-                    <h5><b>Nama anak perusahaan</b></h5>
-                    <h6>Nama Perusahaan</h6>
+                    <h5><b><?= $vacancy['subsidiary'] ?></b></h5>
+                    <h6><?= $vacancy['companyName'] ?></h6>
                     <p><img src="assets/img/icon/location.svg" alt="location" height="16px;"
-                            class="mr-1">Company Location</p>
+                            class="mr-1"><?= $vacancy['city'] ?>, <?= $vacancy['address'] ?></p>
+                </div>
+<!--                --><?php //if ($_SESSION['id'] == ) {?>
+                <div class="media-body ml-5 mt-3 align-center">
+                    <form action="editVacancy?id=<?= $vacancy['vacancyID']?>" method="post">
+<!--                        <input type="hidden" name="id" value="--><?//= $vacancy['vacancyID'] ?><!--">-->
+                        <button type="submit" class="btn btn-primary mb-3" style="width: 140px;">Edit</button>
+                    </form>
+                    <form action="deleteVacancy?id=<?= $vacancy['vacancyID']?>" method="post">
+<!--                        <input type="hidden" name="id" value="--><?//= $vacancy['vacancyID'] ?><!--">-->
+                        <button type="submit" class="btn btn-danger" style="width: 140px;">Delete</button>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="col-12">
-            <h1 class="mt-4">Judul Lowongan </h1>
+            <h1 class="mt-4"><?= $vacancy['vacancyTitle'] ?></h1>
             <div class="align-middle">
                 <div class="contaier">
                     <div class="row">
                         <div class="col">
                             <p style="margin: 4px;">
-                                <img src="assets/img/icon/salary.svg" alt="location" height="16px;" class="mr-1">Salary
+                                <img src="assets/img/icon/salary.svg" alt="salarry" height="16px;"
+                                     class="mr-1"><?= $vacancy['salary'] ?>
                             </p>
                         </div>
                         <div class="col">
                             <p style="margin: 4px;">
-                                <img src="assets/img/icon/salary.svg" alt="location" height="16px;" class="mr-1">Position
+                                <img src="assets/img/icon/position.svg" alt="position" height="16px;"
+                                     class="mr-1"><?= $vacancy['position'] ?>
                             </p>
                         </div>
                         <div class="col">
                             <p style="margin: 4px;">
-                                <img src="assets/img/icon/salary.svg" alt="location" height="16px;" class="mr-1">Spesialisasi
+                                <img src="assets/img/icon/specialization.svg" alt="specialization" height="16px;"
+                                     class="mr-2"><?= $vacancy['specialization'] ?>
                             </p>
                         </div>
                     </div>
@@ -49,23 +69,12 @@
         </div>
         <div class="col-6">
             <h3 class="mt-3">Deskripsi Pekerjaan</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra sapien quis risus pharetra
-                maximus. Proin vitae feugiat arcu. Vivamus et aliquet mi. Orci varius natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus. In facilisis, ligula et efficitur cursus, nulla sem volutpat
-                turpis, sed posuere ante ex eget mi. Nulla arcu ipsum, lacinia eu hendrerit quis, sollicitudin ac lacus.
-                Fusce sollicitudin mauris sapien, vitae ultrices arcu egestas ut.
-
-                Nullam eget quam quis ante egestas convallis. Suspendisse et iaculis enim. Quisque sodales viverra
-                sapien vitae rutrum. Phasellus efficitur porta elit in lacinia. Proin accumsan tempor nibh vitae semper.
-                Praesent ut porta turpis. Suspendisse non lectus venenatis, tempus libero sed, accumsan velit. Donec
-                lobortis nibh nec magna porta iaculis. Nulla molestie erat sed ex mattis, eget lobortis ligula luctus.
-                Mauris egestas dolor a neque varius, nec tincidunt libero tincidunt. Ut eget eros ligula. Cras ac velit
-                in magna bibendum tincidunt nec in nulla.</p>
+            <p><?= $vacancy['information'] ?></p>
         </div>
         <div class="col-6">
             <h3 class="mt-3">Lokasi Kerja</h3>
             <p style="margin: 4px;"><img src="assets/img/icon/location.svg" alt="location" height="16px;"
-                                         class="mr-1">Working Location
+                                         class="mr-1"><?= $vacancy['location'] ?>
             </p>
             <h3 class="mt-3">Gallery</h3>
             <div class="contaier">
@@ -85,18 +94,7 @@
         </div>
         <div class="col-6  mb-5">
             <h3 class="mt-3">Informasi Perusahaan</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra sapien quis risus pharetra
-                maximus. Proin vitae feugiat arcu. Vivamus et aliquet mi. Orci varius natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus. In facilisis, ligula et efficitur cursus, nulla sem volutpat
-                turpis, sed posuere ante ex eget mi. Nulla arcu ipsum, lacinia eu hendrerit quis, sollicitudin ac lacus.
-                Fusce sollicitudin mauris sapien, vitae ultrices arcu egestas ut.
-
-                Nullam eget quam quis ante egestas convallis. Suspendisse et iaculis enim. Quisque sodales viverra
-                sapien vitae rutrum. Phasellus efficitur porta elit in lacinia. Proin accumsan tempor nibh vitae semper.
-                Praesent ut porta turpis. Suspendisse non lectus venenatis, tempus libero sed, accumsan velit. Donec
-                lobortis nibh nec magna porta iaculis. Nulla molestie erat sed ex mattis, eget lobortis ligula luctus.
-                Mauris egestas dolor a neque varius, nec tincidunt libero tincidunt. Ut eget eros ligula. Cras ac velit
-                in magna bibendum tincidunt nec in nulla.</p>
+            <p><?= $vacancy['companyInfo'] ?></p>
         </div>
     </div>
 </div>

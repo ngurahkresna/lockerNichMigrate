@@ -4,6 +4,7 @@ include_once("conf/database.php");
 include_once("controller/authController.php");
 include_once("controller/companyController.php");
 include_once("controller/forumController.php");
+include_once("controller/vacancyController.php");
 
 $request = $_SERVER['REQUEST_URI'];
 $uriSegments = explode("/", parse_url($request, PHP_URL_PATH));
@@ -13,6 +14,7 @@ $segment = $uriSegments[$numSegments - 1];
 $auth = new authController();
 $company = new companyController();
 $forum = new forumController();
+$vacancy = new vacancyController();
 
 switch ($segment) {
 
@@ -46,20 +48,26 @@ switch ($segment) {
     case 'deleteAccount' :
         $auth->destroy();
         break;
-    case 'createVacancy' :
-        include_once('views/createVacancy.php');
+   case 'createVacancy' :
+        $vacancy->create();
+        break;
+    case 'createVacancyProcess' :
+        $vacancy->store();
         break;
     case 'editVacancy' :
-        include_once('views/editVacancy.php');
+        $vacancy->show();
+        break;
+    case 'editVacancyProcess' :
+        $vacancy->update();
         break;
     case 'deleteVacancy' :
-        echo 'Delete Lowongan';
+        $vacancy->destroy();
         break;
     case 'vacancy' :
-        include_once('views/vacancy.php');
+        $vacancy->index();
         break;
     case 'vacancyDetail' :
-        include_once('views/vacancyDetail.php');
+        $vacancy->detail();
         break;
     case 'createPost' :
         $forum->create();
