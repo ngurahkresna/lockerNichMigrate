@@ -2,6 +2,7 @@
 
 include_once("conf/database.php");
 include_once("controller/authController.php");
+include_once("controller/articleController.php");
 include_once("controller/companyController.php");
 include_once("controller/forumController.php");
 include_once("controller/vacancyController.php");
@@ -12,6 +13,7 @@ $numSegments = count($uriSegments);
 $segment = $uriSegments[$numSegments - 1];
 
 $auth = new authController();
+$article = new articleController();
 $company = new companyController();
 $forum = new forumController();
 $vacancy = new vacancyController();
@@ -105,24 +107,29 @@ switch ($segment) {
     case 'deleteCompany' :
         $company->destroy();
         break;
-    case 'createArticle' :
-        include_once('views/createArticle.php');
-        break;
-    case 'editArticle' :
-        include_once('views/editArticle.php');
-        break;
-    case 'article' :
-        include_once('views/article.php');
-        break;
-    case 'deleteArticle' :
-        echo 'delete article';
-        break;
-    case 'detailArticle' :
-        include_once('views/detailArticle.php');
-        break;
+        case 'createArticle' :
+            $article->create();
+            break;
+        case 'createArticleProcess' :
+            $article->store();
+            break;
+        case 'editArticle' :
+            $article->show();
+            break;
+        case 'editArticleProcess' :
+            $article->update();
+            break;
+        case 'article' :
+            $article->index();
+            break;
+        case 'deleteArticle' :
+            $article->destroy();
+            break;
+        case 'detailArticle' :
+            $article->detail();
+            break;
     default :
         echo '404 Not Found';
         break;
 }
 ?>
-
