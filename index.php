@@ -3,6 +3,7 @@
 include_once("conf/database.php");
 include_once("controller/authController.php");
 include_once("controller/companyController.php");
+include_once("controller/forumController.php");
 
 $request = $_SERVER['REQUEST_URI'];
 $uriSegments = explode("/", parse_url($request, PHP_URL_PATH));
@@ -11,6 +12,7 @@ $segment = $uriSegments[$numSegments - 1];
 
 $auth = new authController();
 $company = new companyController();
+$forum = new forumController();
 
 switch ($segment) {
 
@@ -60,16 +62,22 @@ switch ($segment) {
         include_once('views/vacancyDetail.php');
         break;
     case 'createPost' :
-        include_once('views/createPost.php');
+        $forum->create();
+        break;
+    case 'createPostProcess' :
+        $forum->store();
         break;
     case 'editPost' :
-        include_once('views/editPost.php');
+        $forum->show();
+        break;
+    case 'editPostProcess' :
+        $forum->update();
         break;
     case 'deletePost' :
-        echo 'delete postingan';
+        $forum->destroy();
         break;
     case 'post' :
-        include_once('views/post.php');
+        $forum->index();
         break;
     case 'createCompany' :
         $company->create();

@@ -1,3 +1,9 @@
+<?php
+
+$posts = $_SESSION['forums'];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +18,8 @@
 <?php include_once('navbar.php') ?>
 <div class="container mt-5">
     <div class="row">
-        <div class="col-8  mr-auto ml-auto">
+        <?php foreach ($posts as $post) { ?>
+        <div class="col-8  mr-auto ml-auto mb-5">
             <div class="card">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
@@ -22,34 +29,33 @@
                                     <img class="avatar1" src="assets/img/avatar.jpg" alt="ava">
                                 </div>
                                 <div class="col-8">
-                                    <h6 class="mt-2">Nama User</h6>
+                                    <h6 class="mt-2"><?= $post['firstName'] ?></h6>
                                 </div>
+                                <?php if ($post['userID'] == $_SESSION['id']) { ?>
                                 <div class="col-3">
                                     <div class="dropdown">
                                         <button class="dropdown-toggle mt-1 float-right"
                                                 style="background-color: white; border: none; color: black"
                                                 type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">Menu</button>
+                                                aria-haspopup="true" aria-expanded="false">Menu
+                                        </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="editPost">Edit</a>
-                                            <a class="dropdown-item" href="deletePost">Delete</a>
+                                            <a class="dropdown-item"
+                                               href="editPost?id=<?= $post['id'] ?>">Edit</a>
+                                            <a class="dropdown-item"
+                                               href="deletePost?id=<?= $post['id'] ?>">Delete</a>
                                         </div>
                                     </div>
                                 </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </li>
                     <li class="list-group-item">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet ex sodales, aliquet leo
-                            vel, laoreet dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                            ac turpis egestas. Sed ornare fringilla ipsum, at egestas metus elementum at. Aenean
-                            sagittis rhoncus sem a volutpat. Sed porttitor commodo justo nec dictum. Aliquam diam lacus,
-                            consectetur et nisl eget, porta tempus nibh. Etiam sed mollis orci, in scelerisque nulla.
-                            Nam tortor dui, sagittis sit amet posuere non, interdum ut est. Mauris dignissim auctor
-                            mauris eu porta. Sed ornare leo neque, eget imperdiet urna volutpat nec. Vivamus at mattis
-                            diam.
-                        </p>
+                        <h3> <?= $post['title'] ?> </h3>
+                    </li>
+                    <li class="list-group-item">
+                        <p> <?= $post['description'] ?> </p>
                     </li>
                     <li class="list-group-item">
                         <div class="container">
@@ -92,6 +98,7 @@
                 </ul>
             </div>
         </div>
+        <?php } ?>
     </div>
 </div>
 </body>

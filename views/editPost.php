@@ -1,3 +1,10 @@
+<?php
+
+$post = $_SESSION['post'];
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,25 +28,31 @@
                                 <img class="avatar1" src="assets/img/avatar.jpg" alt="ava">
                             </div>
                             <div class="col-10 mt-4">
-                                <h6>Nama User</h6>
+                                <h6><?= $post['firstName'] ?></h6>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <input type="text" class="form-control border-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tulis Judul">
-                    </li>
-                    <li class="list-group-item">
-                        <div class="form-group">
-                            <textarea class="form-control border-0" style="height: 400px" id="exampleFormControlTextarea1" rows="3" placeholder="Tuliskan pesan disini..."></textarea>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <button type="button" class="btn btn-primary">Perbaharui</button>
-                    </li>
-                </ul>
+                <form action="editPostProcess" method="post">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <input type="hidden" name="id" value="<?= $post['id'] ?>">
+                            <input type="text" class="form-control border-0" name="title" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Tulis Judul" value="<?= $post['title'] ?>" required>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-group">
+                            <textarea class="form-control border-0" style="height: 400px"
+                                      name="description" id="exampleFormControlTextarea1" rows="3"
+                                      placeholder="Tuliskan pesan disini..." required><?= $post['description'] ?></textarea>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <button type="submit" class="btn btn-primary">Perbaharui</button>
+                        </li>
+                    </ul>
+                </form>
             </div>
         </div>
     </div>

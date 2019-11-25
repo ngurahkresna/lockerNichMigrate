@@ -21,25 +21,31 @@
                                 <img class="avatar1" src="assets/img/avatar.jpg" alt="ava">
                             </div>
                             <div class="col-10 mt-4">
-                                <h6>Nama User</h6>
+                                <h6><?= $_SESSION['fName'] ?></h6>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <input type="text" class="form-control border-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tulis Judul">
-                    </li>
-                    <li class="list-group-item">
-                        <div class="form-group">
-                            <textarea class="form-control border-0" style="height: 400px" id="exampleFormControlTextarea1" rows="3" placeholder="Tuliskan pesan disini..."></textarea>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <button type="button" class="btn btn-primary">Post</button>
-                    </li>
-                </ul>
+                <form action="createPostProcess" method="post">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
+                            <input type="text" class="form-control border-0" name="title" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Tulis Judul">
+                        </li>
+                        <li class="list-group-item">
+                            <div class="form-group">
+                                <textarea class="form-control border-0" style="height: 400px" name="description"
+                                          id="exampleFormControlTextarea1" rows="3"
+                                          placeholder="Tuliskan pesan disini..."></textarea>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <button type="submit" class="btn btn-primary">Post</button>
+                        </li>
+                    </ul>
+                </form>
             </div>
         </div>
     </div>
