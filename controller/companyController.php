@@ -18,7 +18,7 @@ class companyController
         $_SESSION['companies'] = $result;
         include_once('views/company.php');
     }
-
+    
     public function create()
     {
         include_once('views/createCompany.php');
@@ -62,7 +62,7 @@ class companyController
         $result = $this->model->editCompany($param);
 
         if ($result) {
-            echo '<script>alert("Berhasil update artikel"); window.location="company"; </script>';
+            echo '<script>alert("Berhasil update company"); window.location="company"; </script>';
 
         } else {
             echo '<script>alert("' . $_SESSION['message'] . '"); window.location="company"; </script>';
@@ -76,7 +76,7 @@ class companyController
         $result = $this->model->deleteCompany($param);
 
         if ($result) {
-            echo '<script>alert("Berhasil delete artikel"); window.location="company"; </script>';
+            echo '<script>alert("Berhasil delete company"); window.location="company"; </script>';
 
         } else {
             echo '<script>alert("' . $_SESSION['message'] . '"); window.location="company"; </script>';
