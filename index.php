@@ -2,6 +2,7 @@
 
 include_once("conf/database.php");
 include_once("controller/authController.php");
+include_once("controller/companyController.php");
 
 $request = $_SERVER['REQUEST_URI'];
 $uriSegments = explode("/", parse_url($request, PHP_URL_PATH));
@@ -9,6 +10,7 @@ $numSegments = count($uriSegments);
 $segment = $uriSegments[$numSegments - 1];
 
 $auth = new authController();
+$company = new companyController();
 
 switch ($segment) {
 
@@ -70,16 +72,22 @@ switch ($segment) {
         include_once('views/post.php');
         break;
     case 'createCompany' :
-        include_once('views/createCompany.php');
+        $company->create();
+        break;
+    case 'createCompanyProcess' :
+        $company->store();
         break;
     case 'editCompany' :
-        include_once('views/editCompany.php');
+        $company->show();
+        break;
+    case 'editCompanyProcess' :
+        $company->update();
         break;
     case 'company' :
-        include_once('views/company.php');
+        $company->index();
         break;
     case 'deleteCompany' :
-        echo 'delete perusahaan';
+        $company->destroy();
         break;
     case 'createArticle' :
         include_once('views/createArticle.php');
